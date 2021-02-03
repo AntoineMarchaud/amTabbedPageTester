@@ -44,12 +44,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-
-    // Dagger 2 : must be replaced by hilt !
-    implementation "com.google.dagger:dagger:$dagger2_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
-    compileOnly "org.glassfish:javax.annotation:$javax_annotation"
-
     // Android navigation componant
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
@@ -57,11 +51,6 @@ dependencies {
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
     // Jetpack Compose Integration
     implementation "androidx.navigation:navigation-compose:1.0.0-alpha06"
-
-    //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
 
@@ -71,10 +60,6 @@ dependencies {
 
     // LiveData & ViewModel (MVVM)
     implementation "android.arch.lifecycle:extensions:2.2.0"
-
-    // glide
-    implementation "com.github.bumptech.glide:glide:$glide_version"
-    kapt "com.github.bumptech.glide:compiler:$glide_version"
 }
 
 apply plugin: "androidx.navigation.safeargs.kotlin"
