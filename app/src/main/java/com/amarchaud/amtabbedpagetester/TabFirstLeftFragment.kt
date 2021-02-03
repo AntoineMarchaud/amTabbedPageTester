@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_tab_first_left.*
+import kotlin.reflect.KProperty
+
+
 
 
 class TabFirstLeftFragment : Fragment() {
@@ -17,7 +20,7 @@ class TabFirstLeftFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        
         (activity as AppCompatActivity).supportActionBar?.show()
         (activity as AppCompatActivity).bottom_nav?.visibility = View.VISIBLE
 
