@@ -6,21 +6,30 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_tab_first_right.*
+import com.amarchaud.amtabbedpagetester.databinding.FragmentTabFirstRightBinding
 
 class TabRightFirstFragment : Fragment() {
+
+    private var _binding: FragmentTabFirstRightBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_tab_first_right, container, false)
+    ): View {
+        _binding = FragmentTabFirstRightBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        nextButtonRight.setOnClickListener {
+        binding.nextButtonRight.setOnClickListener {
             findNavController().navigate(R.id.action_tabFirstRightFragment_to_tabSecondRightFragment)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

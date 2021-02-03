@@ -1,22 +1,28 @@
 package com.amarchaud.amtabbedpagetester
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.amarchaud.amtabbedpagetester.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
 
         val navHostFragment =
@@ -30,6 +36,23 @@ class MainActivity : AppCompatActivity() {
                 R.id.tabFirstRightFragment
             )
         )
+
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when(destination.id) {
+                R.id.splashFragment -> {
+                    supportActionBar?.hide()
+                    binding.bottomNav.visibility = View.GONE
+                }
+                R.id.tabFirstLeftFragment -> {
+                    supportActionBar?.show()
+                    binding.bottomNav.visibility = View.VISIBLE
+                }
+                R.id.tabFirstRightFragment -> {
+
+                }
+            }
+        }
 
         // bottom nav
         findViewById<BottomNavigationView>(R.id.bottom_nav).setupWithNavController(navController)
