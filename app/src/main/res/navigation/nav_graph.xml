@@ -3,22 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/tabFirstLeftFragment">
 
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.amarchaud.amtabbedpagetester.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_tabFirstLeftFragment"
-            app:destination="@id/tabFirstLeftFragment"
-            app:popUpTo="@id/splashFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
         android:id="@+id/tabFirstLeftFragment"
-        android:name="com.amarchaud.amtabbedpagetester.TabFirstLeftFragment"
+        android:name="com.amarchaud.amtabbedpagetester.fragments.TabFirstLeftFragment"
         android:label="First left fragment"
         tools:layout="@layout/fragment_tab_first_left">
         <action
@@ -27,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/tabSecondLeftFragment"
-        android:name="com.amarchaud.amtabbedpagetester.TabSecondLeftFragment"
+        android:name="com.amarchaud.amtabbedpagetester.fragments.TabSecondLeftFragment"
         android:label="Second left fragment"
         tools:layout="@layout/fragment_tab_second_left" />
     <fragment
         android:id="@+id/tabFirstRightFragment"
-        android:name="com.amarchaud.amtabbedpagetester.TabRightFirstFragment"
+        android:name="com.amarchaud.amtabbedpagetester.fragments.TabRightFirstFragment"
         android:label="First right fragment"
         tools:layout="@layout/fragment_tab_first_right">
         <action
@@ -41,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/tabSecondRightFragment"
-        android:name="com.amarchaud.amtabbedpagetester.TabRightSecondFragment"
+        android:name="com.amarchaud.amtabbedpagetester.fragments.TabRightSecondFragment"
         android:label="Second right fragment"
         tools:layout="@layout/fragment_tab_second_right" />
 </navigation>

@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.splashFragment,
                 R.id.tabFirstLeftFragment,
                 R.id.tabFirstRightFragment
             )
@@ -40,13 +39,8 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
-                R.id.splashFragment -> {
-                    supportActionBar?.hide()
-                    binding.bottomNav.visibility = View.GONE
-                }
                 R.id.tabFirstLeftFragment -> {
-                    supportActionBar?.show()
-                    binding.bottomNav.visibility = View.VISIBLE
+
                 }
                 R.id.tabFirstRightFragment -> {
 

@@ -10,13 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AmTabbedPageTester">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <!-- This is added to handle a deep link -->
             <nav-graph android:value="@navigation/nav_graph" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity">
+            <!-- This is added to handle a deep link -->
+            <nav-graph android:value="@navigation/nav_graph" />
         </activity>
     </application>
 

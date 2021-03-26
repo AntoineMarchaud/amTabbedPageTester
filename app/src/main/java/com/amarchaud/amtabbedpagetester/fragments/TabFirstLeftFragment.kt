@@ -1,4 +1,4 @@
-package com.amarchaud.amtabbedpagetester
+package com.amarchaud.amtabbedpagetester.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.amarchaud.amtabbedpagetester.R
 import com.amarchaud.amtabbedpagetester.databinding.FragmentTabFirstLeftBinding
 
 
